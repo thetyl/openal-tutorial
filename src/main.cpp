@@ -58,7 +58,7 @@ int main() {
 
 	ogg_thread_running = true;
 
-	std::thread ogg_thread = std::thread(run_ogg_thread);
+	std::thread ogg_thread(run_ogg_thread);
 
 	std::getchar();
 
