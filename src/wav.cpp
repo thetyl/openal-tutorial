@@ -13,7 +13,7 @@ void wav_example() {
 	ALuint buffer;
 	alGenBuffers(1, &buffer);
 
-	if (!load_wav("/home/tyl/dev/openal-tutorial/sounds/door_open.wav", buffer)) {
+	if (!load_wav("C:/dev/openal-tutorial/sounds/door_open.wav", buffer)) {
 		return;
 	}
 
@@ -103,12 +103,14 @@ static bool load_wav(const std::string &file_path, ALuint buffer) {
 	uint32_t data_size;
 	in_stream.read(reinterpret_cast<char *>(&data_size), sizeof(uint32_t));
 
-	uint8_t data[data_size];
+	uint8_t *data = new uint8_t[data_size];
 	in_stream.read(reinterpret_cast<char *>(data), sizeof(uint8_t) * data_size);
 
 	in_stream.close();
 
 	alBufferData(buffer, format, data, data_size, sample_rate);
+
+	delete[] data;
 
 	return true;
 }

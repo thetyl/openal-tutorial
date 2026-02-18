@@ -52,7 +52,7 @@ static void run_ogg_thread() {
 	ogg.bytes_consumed = 0;
 	ogg.current_section = 0;
 
-	std::string file_path = "/home/tyl/dev/openal-tutorial/sounds/song.ogg";
+	std::string file_path = "C:/dev/openal-tutorial/sounds/song.ogg";
 	ogg.file_stream.open(file_path, std::ios::in | std::ios::binary);
 
 	if (!ogg.file_stream.is_open()) {

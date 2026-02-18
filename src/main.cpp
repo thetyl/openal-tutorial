@@ -25,7 +25,7 @@ int main() {
 		return 1;
 	}
 
-	//wav_example();
+	wav_example();
 	ogg_example();
 
 	alcMakeContextCurrent(NULL);
