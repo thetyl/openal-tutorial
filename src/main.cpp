@@ -164,8 +164,6 @@ static void run_ogg_thread() {
 			break;
 		}
 	}
-
-	return;
 }
 
 static bool update_stream_buffers(bool init) {
